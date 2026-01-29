@@ -1,0 +1,72 @@
+:root {
+  --color-primary: #455A1F; /* darker olive */
+  --color-primary-dark: #071B32; /* darker navy */
+  --color-accent: #D95A3F; /* deeper coral */
+  --color-bg: #EBECEE; /* slightly darker neutral */
+  --color-surface: #FBFBFB; /* off-white */
+  --color-text: #16191C; /* richer charcoal */
+  --color-on-primary: #FFFFFF;
+} 
+
+body {
+  font-family: Inter, sans-serif;
+  background: var(--color-bg);
+  color: var(--color-text);
+}
+
+h1,
+h2 {
+  font-family: "Playfair Display", serif;
+} 
+
+/* Floating hearts */
+.heart {
+  position: fixed;
+  color: var(--color-accent);
+  text-shadow: 0 0 10px var(--color-accent);
+  animation: floatUp 8s linear infinite;
+  opacity: 0.5;
+} 
+@keyframes floatUp {
+  from {
+    transform: translateY(100vh);
+    opacity: 1;
+  }
+  to {
+    transform: translateY(-10vh);
+    opacity: 0;
+  }
+}
+
+/* Flip cards */
+.flip {
+  perspective: 1000px;
+}
+.flip-inner {
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+}
+.flip:hover .flip-inner {
+  transform: rotateY(180deg);
+}
+.flip-front,
+.flip-back {
+  backface-visibility: hidden;
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 1rem;
+}
+.flip-back {
+  transform: rotateY(180deg);
+  background: var(--color-accent);
+  color: var(--color-on-primary);
+} 
+
+.glass {
+  background: rgba(16, 42, 36, 0.6);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255,255,255,0.05);
+}

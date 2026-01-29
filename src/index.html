@@ -1,0 +1,163 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Happy Valetine</title>
+
+    <!-- Tailwind CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              bg: "#F6F7F9",
+              surface: "#FFFFFF",
+              primary: "#556B2F",
+              "primary-dark": "#0B2545",
+              accent: "#E76F51",
+              text: "#1E2327",
+            },
+          },
+        },
+      };
+    </script>
+    <script src="./js/animations.js" defer></script>
+    <!-- Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Inter:wght@300;500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body class="bg-bg text-text overflow-x-hidden">
+    <!-- Floating hearts container -->
+    <div id="hearts"></div>
+
+    <!-- HERO -->
+    <section
+      class="h-screen flex flex-col justify-center items-center text-center bg-gradient-to-b from-primary-dark via-primary to-bg text-white"
+    >
+      <h1 class="text-5xl md:text-6xl mb-6">
+        For you, my favorite person in the world ❤️
+      </h1>
+      <button
+        onclick="
+          document
+            .getElementById('timeline')
+            .scrollIntoView({ behavior: 'smooth' })
+        "
+        class="px-6 py-3 bg-accent text-white rounded-full hover:scale-110 transition"
+      >
+        Start our story
+      </button>
+    </section>
+
+    <!-- TIMELINE -->
+    <section id="timeline" class="py-24 max-w-3xl mx-auto">
+      <h2 class="text-4xl text-center mb-12">Our Journey</h2>
+
+      <div class="space-y-10">
+        <div
+          class="timeline-item opacity-0 translate-y-10 transition-all duration-700"
+        >
+          <div class="border-l-4 border-accent pl-6">
+            <h3 class="text-xl">The day we kissed</h3>
+            <p class="text-slate-400">
+              12/09/2025 that unforgettable day.
+            </p>
+          </div>
+        </div>
+
+        <div
+          class="timeline-item opacity-0 translate-y-10 transition-all duration-700"
+        >
+          <div class="border-l-4 border-accent pl-6">
+            <h3 class="text-xl">🚗 Our first trip</h3>
+            <p class="text-slate-400">In the middle of the mountains, cold but never felt so warm.</p>
+          </div>
+        </div>
+
+        <div
+          class="timeline-item opacity-0 translate-y-10 transition-all duration-700"
+        >
+          <div class="border-l-4 border-accent pl-6">
+            <h3 class="text-xl">💖 When I knew</h3>
+            <p class="text-slate-400">
+              Somewhere between laughter, tears and anger, I fell in love.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- REASONS CARDS -->
+    <div class="bg-gradient-to-t from-primary-dark via-primary to-bg">
+      <section class="py-24">
+        <h2 class="text-4xl text-center mb-12">Reasons I Love You</h2>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+          <!-- Card -->
+          <div class="flip rounded-xl p-6">
+            <div class="flip-inner absolute inset-0">
+              <div
+                class="flip-front border-l-4 border-accent pl-6 bg-surface p-4 rounded-xl"
+              >
+                You make my days colorful
+              </div>
+              <div class="flip-back">Because life is brighter with you ✨</div>
+            </div>
+          </div>
+
+          <div class="flip relative h-40">
+            <div class="flip-inner absolute inset-0">
+              <div
+                class="flip-front border-l-4 border-accent pl-6 bg-surface p-4 rounded-xl"
+              >
+                You the most beautiful soul
+              </div>
+              <div class="flip-back">Even when I annoy you</div>
+            </div>
+          </div>
+
+          <div class="flip relative h-40">
+            <div class="flip-inner absolute inset-0">
+              <div
+                class="flip-front border-l-4 border-accent pl-6 bg-surface p-4 rounded-xl"
+              >
+                You are the sexiest girl
+              </div>
+              <div class="flip-back">In every room you enter</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- LOVE LETTER -->
+      <section class="py-24 max-w-2xl mx-auto text-center">
+        <h2 class="text-4xl mb-6">A Letter For You</h2>
+        <p id="letter" class="text-xl text-slate-300"></p>
+      </section>
+    </div>
+
+    <!-- FINALE -->
+    <section class="py-32 text-center bg-primary-dark text-white">
+      <h2 class="text-5xl mb-8">Will you be my Valentine?</h2>
+      <button
+        id="yesBtn"
+        class="px-8 py-4 bg-accent rounded-full text-xl hover:scale-110 transition text-white"
+      >
+        Yes ❤️
+      </button>
+    </section>
+
+    <style>
+      @keyframes fall {
+        to {
+          transform: translateY(100vh) rotate(360deg);
+        }
+      }
+    </style>
+  </body>
+</html>
